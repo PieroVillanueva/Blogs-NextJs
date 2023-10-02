@@ -20,7 +20,7 @@ const getData = async (page = 1, pagesize = 2) => {
   };
   const { data, meta } = await fetchApi(path, urlParamsObject);
   return {
-    data,
+    data: data,
     pagination: meta.pagination,
   };
 };
