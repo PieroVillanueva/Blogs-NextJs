@@ -9,17 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "flowbite": "^1.8.1",
+    "flowbite-react": "^0.6.3",
+    "next": "latest",
+    "next-mdx-remote": "^4.4.1",
+    "nextjs-toploader": "^1.4.2",
+    "qs": "^6.11.2",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "latest",
+    "@types/qs": "^6.9.8",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
