@@ -31,14 +31,14 @@ interface Props {
 }
 const Blog = async ({ searchParams }: Props) => {
   const { page } = searchParams;
-  //console.log(page);
+  console.log(page);
 
   let pageNumber = page ? parseInt(page) : 1;
 
   if (isNaN(pageNumber) || pageNumber < 1) {
     pageNumber = 1;
   }
-
+  console.log(pageNumber);
   const { data, pagination } = await getData(pageNumber);
   //console.log(data);
 
@@ -46,11 +46,11 @@ const Blog = async ({ searchParams }: Props) => {
     <div className="space-y-8 ">
       <PageHeader text={"Lastest Posts"} />
       <PagePagination pagination={pagination} />
-      <div className="grid gap-4 justify-center">
+      <section className="grid gap-4 justify-center">
         {data.map((post: Post) => (
           <PageCardImage key={post.id} post={post} />
         ))}
-      </div>
+      </section>
     </div>
   );
 };

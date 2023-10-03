@@ -22,31 +22,32 @@ const PagePagination = ({ pagination }: Props) => {
     "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white";
   return (
     <>
-      <nav aria-label="Page navigation example" className="text-center">
-        <ul className="inline-flex -space-x-px text-sm">
+      <nav aria-label="Page navigation example " className="text-center">
+        <ul className="inline-flex -space-x-px">
           <li>
             <Link
               href={
                 page === 1 ? `/blog?page=${page}` : `/blog?page=${page - 1}`
               }
-              className={`${classPrevious}
-                ${page === 1 ? "opacity-50 pointer-events-none" : ""}`}
+              className={`${classPrevious} ${
+                page === 1 ? "opacity-50 pointer-events-none" : ""
+              }`}
             >
               Previous
             </Link>
           </li>
-          {Array.from({ length: pageCount }).map((_, i) => (
-            <li key={i}>
+
+          {Array.from({ length: pageCount }).map((_, index) => (
+            <li key={index}>
               <Link
-                href={`/blog?page=${i + 1}`}
-                className={`${
-                  i + 1 === page ? classNumberActive : classNumber
-                }`}
+                href={`/blog?page=${index + 1}`}
+                className={index + 1 === page ? classNumberActive : classNumber}
               >
-                {i + 1}
+                {index + 1}
               </Link>
             </li>
           ))}
+
           <li>
             <Link
               href={
@@ -54,8 +55,9 @@ const PagePagination = ({ pagination }: Props) => {
                   ? `/blog?page=${page}`
                   : `/blog?page=${page + 1}`
               }
-              className={`${classNext}
-                ${page === pageCount ? "opacity-50 pointer-events-none" : ""}`}
+              className={`${classNext} ${
+                page === pageCount ? "opacity-50 pointer-events-none" : ""
+              }`}
             >
               Next
             </Link>

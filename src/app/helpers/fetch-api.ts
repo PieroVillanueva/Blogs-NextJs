@@ -15,8 +15,9 @@ export const fetchApi=async(
         }
         const queryString=qs.stringify(urlParamsObject,{encodeValuesOnly:true})
         
-        const requestUrl = `${getStrapiUrl(`/api${path}${queryString ? `?${queryString}` : ""}`)}`;
-        
+        //const requestUrl = `${getStrapiUrl(`/api${path}${queryString ? `?${queryString}` : ""}`)}`;
+        const requestUrl = getStrapiUrl(`/api${path}${queryString?`?${queryString}` : ""}`)
+
         console.log(requestUrl)
         const res=await fetch(requestUrl,mergedOptions);
         const data=await res.json();
